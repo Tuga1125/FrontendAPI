@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Jumbotron, Button } from 'reactstrap'
+import Welcome from './components/Welcome';
+import Register from './components/Authentication/Register';
+import Login from './components/Authentication/Login';
+import Navbar from './components/Navbar/Navbar';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import NoMatch from './components/NoMatch';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/register" component={Register} />
+          <Route path="/" exact component={Welcome} />
+          <Route path='/login' component={Login} />
+          <Route path='/navbar' component={Navbar} />
+          <Route>
+            <NoMatch />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
-  );
+    );
+  }
 }
 
 export default App;
