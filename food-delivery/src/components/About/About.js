@@ -1,7 +1,5 @@
-// import "./About.css";
 import Review from "../Review/Review";
-// import Appoint from "../Core-component/Appoint";
- //import CardOne from "../Core-component/CardOne";
+
 
 import React from "react";
 import {
@@ -37,28 +35,6 @@ class About extends React.Component {
             </Link>
           </p>
         </Jumbotron>
-{/* 
-        <div class="card-container">
-          <Container>
-            <CardDeck class="card-deck">
-              <CardOne
-                imageSrc="./images/man1.jpg"
-                title="Founder"
-                content="this is the contenet and here we will place some of the content and it sounds reacts"
-              />
-              <CardOne
-                imageSrc="./images/man2.jpg"
-                title="Chairman"
-                content="this is the contenet and here we will place some of the content and it sounds reacts"
-              />
-              <CardOne
-                imageSrc="./images/man3.jpg"
-                title="CEO"
-                content="this is the contenet and here we will place some of the content and it sounds reacts"
-              />
-            </CardDeck>
-          </Container>
-        </div> */}
         <div className="container">
           <Row>
             <Col xs={12} md={6}>

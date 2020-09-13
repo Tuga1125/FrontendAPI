@@ -1,0 +1,52 @@
+h1 {
+    background-color: palevioletred;
+  }
+  
+  i {
+    color: palevioletred;
+  }
+  
+  .nav {
+    min-height: 120px;
+    background-color: #be2698;
+  }
+  nav {
+    width: 100%;
+  }
+  
+  .nav__header {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 80px;
+  }
+  
+  .nav__header-left a {
+    margin-top: 10px;
+    margin-left: 50px;
+    display: flex;
+    color: plum;
+    font-size: 18px;
+    font-weight: bold;
+    align-items: flex-start;
+    text-decoration: none;
+  }
+  
+  .nav__header-right {
+    margin-right: 50px;
+  }
+  
+  .nav__header-right img {
+    height: 40px;
+    margin: 10px;
+  }
+  
+  .nav__header-left a i {
+    color: plum;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+  
