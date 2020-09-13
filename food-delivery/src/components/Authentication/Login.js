@@ -53,7 +53,15 @@ export default class Login extends Component {
                             value={this.state.password}
                             onChange={this.handleChange} />
                     </FormGroup>
-                    <Button block color="primary">Login</Button>
+                    <Button
+            variant="primary"
+            type="submit"
+            onClick={() => {
+              alert("Thanks for submitting your valueable feedback.");
+            }}
+          >
+            Submit
+          </Button>
                 </Form>
 
             </div>

@@ -6,11 +6,8 @@ import {
   Image,
   Jumbotron,
   Button,
-  Container,
   Row,
-  Col,
-  // Card,
-  CardDeck
+  Col
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
@@ -38,7 +35,7 @@ class About extends React.Component {
         <div className="container">
           <Row>
             <Col xs={12} md={6}>
-              <Review title="REVIEW" label="Your Reviews" />
+              <Review title="YOUR REVIEW" label="Your Reviews" />
             </Col>
             {/* <Col xs={12} md={6}>
               <Appoint />

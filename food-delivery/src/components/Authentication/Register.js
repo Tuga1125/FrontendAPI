@@ -91,8 +91,15 @@ class Register extends React.Component {
         </Col>
       </Row>
     
-      <Button block color="primary" onClick={this.handleSubmit}>Register</Button>
-    </Form> </div>
+      <Button
+            variant="primary"
+            type="submit"
+            onClick={() => {
+              alert("Thanks for registering with us.");
+            }}
+          >
+            Submit
+          </Button>    </Form> </div>
         )
     }
 }

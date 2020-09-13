@@ -11,8 +11,6 @@ import {
 } from "react-bootstrap";
 import decode from "jwt-decode";
 import axios from "axios";
-import MyModal from "./../Core-component/MyModal";
-import MyTable from "../Core-component/MyTable";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 
@@ -178,10 +176,6 @@ class Profile extends React.Component {
                   Add new
                 </Button>
 
-                <MyModal
-                  show={this.state.modalShow}
-                  onHide={() => this.setModalShow(false)}
-                />
               </ButtonToolbar>
             </Col>
             <Col xs={12} md={8}>
