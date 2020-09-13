@@ -10,7 +10,7 @@ export default class Login extends Component {
         this.state = {
             username: '',
             password: '',
-            isBasic: false,
+            isUser: false,
             isAdmin: false,
         }
     }
@@ -19,23 +19,23 @@ export default class Login extends Component {
             [event.target.name]: event.target.value
         })
     }
-
+   
     handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3002/api/users/login', this.state)
+        axios.post('http://localhost:3001/api/users/login', this.state)
             .then((res) => {
                 console.log(res);
                 localStorage.setItem('token', res.data.token);
                 let user = jwtDecode(res.data.token.split(' ')[1]);
                 if (user.role === 'admin') this.setState({ isAdmin: true })
-                else this.setState({ isBasic: true })
+                else this.setState({ isUser: true })
             }).catch(err => console.log(err));
     }
 
     render() {
         if (this.state.isAdmin) {
             return <Redirect to='/admin' />
-        } else if (this.state.isBasic) {
+        } else if (this.state.isUser) {
             return <Redirect to='/dash' />
         }
         return (

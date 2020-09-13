@@ -1,12 +1,16 @@
 import React from 'react'
 import { Jumbotron, Container, Button } from 'reactstrap'
 import Login from './Authentication/Login'
+import Slider from "./Navbar/Slider"
 
-export default function Welcome(props) {
+
+export default function Home(props) {
     return (
         <div>
+                
+
             <Jumbotron fluid>
-                <Container fluid>
+                <Container fluid> 
                     <h1 className='display-3'>Food App</h1>
                     <p className="lead">Welcome to the coolest food delivery app in the world!!</p>
                     <hr />
@@ -20,6 +24,7 @@ export default function Welcome(props) {
                     </p>
                 </Container>
             </Jumbotron>
+        
         </div>
-    )
+    ) 
 }
