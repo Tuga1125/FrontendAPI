@@ -7,12 +7,10 @@ class Register extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-          firstname: "", 
-          lastname: "",
-          username:"",
-          email: "",
-          password: "",
-          role:""
+          foodname: "", 
+          description: "",
+          quantity:"",
+          price: ""
         }
     }
     handleChange = (event) => {
@@ -22,7 +20,7 @@ class Register extends React.Component {
     }
     handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:3000/api/users/register', this.state)
+        axios.post('http://localhost:3000/api/fooditem', this.state)
             .then((res) => {
                 console.log(res)
             }).catch(err => console.log(err.response.data))
@@ -30,23 +28,23 @@ class Register extends React.Component {
     render() {
         return (
             <div className="container">
-                <h1>Registration Form</h1>
+                <h1>Add Food Items</h1>
             <Form>
      
       <Row form>
         <Col md={6}>
           <FormGroup>
-            <Label for="exampleFirstName">First Name</Label>
-            <Input type="text" name="firstname" id="firstname" placeholder="input your firstname" 
-            value={this.state.firstname}
+            <Label for="exampleFoodname">Food Name</Label>
+            <Input type="text" name="foodname" id="foodname" placeholder="Enter your foodname" 
+            value={this.state.foodname}
             onChange={this.handleChange}  />
           </FormGroup>
         </Col>
         <Col md={6}>
           <FormGroup>
-            <Label for="exampleLastName">Last Name</Label>
-            <Input type="text" name="lastname" id="lastname" placeholder="Last Name" 
-            value={this.state.lastname}
+            <Label for="exampleDescription">Description</Label>
+            <Input type="text" name="description" id="description" placeholder="Description" 
+            value={this.state.description}
             onChange={this.handleChange}  />
 
 </FormGroup>
@@ -55,7 +53,7 @@ class Register extends React.Component {
       <Row form>
         <Col md={6}>
           <FormGroup>
-            <Label for="exampleEmail">Email</Label>
+            <Label for="exampleQuantity">Quantity</Label>
             <Input type="email" name="email" id="email" placeholder="with a placeholder" 
             value={this.state.email}
             onChange={this.handleChange}  />
@@ -65,27 +63,9 @@ class Register extends React.Component {
       <Row form>
         <Col md={6}>
           <FormGroup>
-            <Label for="exampleUsername">Username</Label>
-            <Input type="text" name="username" id="username" placeholder="input your username" 
+            <Label for="examplePrice">Price</Label>
+            <Input type="text" name="price" id="price" placeholder="Enter the price" 
             value={this.state.username}
-            onChange={this.handleChange}  />
-          </FormGroup>
-        </Col>
-        <Col md={6}>
-          <FormGroup>
-            <Label for="examplePassword">Password</Label>
-            <Input type="password" name="password" id="password" placeholder="input your password" 
-            value={this.state.password}
-            onChange={this.handleChange}  />
-          </FormGroup>
-        </Col>
-      </Row>
-      <Row form>
-        <Col md={6}>
-          <FormGroup>
-            <Label for="exampleRole">Role</Label>
-            <Input type="role" name="role" id="role" placeholder="with a placeholder" 
-            value={this.state.role}
             onChange={this.handleChange}  />
           </FormGroup>
         </Col>
@@ -95,7 +75,7 @@ class Register extends React.Component {
             variant="primary"
             type="submit"
             onClick={() => {
-              alert("Thanks for registering with us.");
+              alert("Your fooditem is added!");
             }}
           >
             Submit

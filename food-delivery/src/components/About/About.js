@@ -1,6 +1,4 @@
 import Review from "../Review/Review";
-
-
 import React from "react";
 import {
   Image,
@@ -37,9 +35,6 @@ class About extends React.Component {
             <Col xs={12} md={6}>
               <Review title="YOUR REVIEW" label="Your Reviews" />
             </Col>
-            {/* <Col xs={12} md={6}>
-              <Appoint />
-            </Col> */}
           </Row>
         </div>
       </div>

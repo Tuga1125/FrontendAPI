@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch} from "react-router-dom";
 import Home from "./Home";
 import About from "./About/About";
 import Contact from "./Contact/Contact";
-// import About from "./Items/Fooditems";
+import Food from "./Items/Food";
 import Navbar from "./Navbar/Navbar";
 import Login from "./Authentication/Login";
 import Register from "./Authentication/Register";
@@ -60,7 +60,7 @@ class App extends React.Component {
               <Route path="/" exact component={Home} />
               <Route path="/about" exact component={About}/>
               <Route path="/contact" exact component={Contact} />
-              {/* <Route path="/fooditems" exact component={Fooditems} /> */}
+              <Route path="/fooditems" exact component={Food} />
               <Route path="/login" exact component={Login} />
               <Route path="/register" exact component={Register} />
             </Switch>
