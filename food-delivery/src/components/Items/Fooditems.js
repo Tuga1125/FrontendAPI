@@ -1,16 +1,15 @@
-import React from "react";
-import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import axios from 'axios'
-import { withRouter } from "react-router";
-
-class Register extends React.Component {
+import React, { Component } from 'react'
+import { Form, FormGroup, Input, Button } from 'reactstrap'
+import axios from 'axios';
+import {Link} from 'react-router-dom';
+export default class Review extends Component {
     constructor(props) {
         super(props)
         this.state = {
-          foodname: "", 
-          description: "",
-          quantity:"",
-          price: ""
+            foodname: '',
+            description: '',
+            quantity:'',
+            price:''
         }
     }
     handleChange = (event) => {
@@ -26,62 +25,56 @@ class Register extends React.Component {
             }).catch(err => console.log(err.response.data))
     }
     render() {
-        return (
-            <div className="container">
-                <h1>Add Food Items</h1>
-            <Form>
-     
-      <Row form>
-        <Col md={6}>
-          <FormGroup>
-            <Label for="exampleFoodname">Food Name</Label>
-            <Input type="text" name="foodname" id="foodname" placeholder="Enter your foodname" 
-            value={this.state.foodname}
-            onChange={this.handleChange}  />
-          </FormGroup>
-        </Col>
-        <Col md={6}>
-          <FormGroup>
-            <Label for="exampleDescription">Description</Label>
-            <Input type="text" name="description" id="description" placeholder="Description" 
-            value={this.state.description}
-            onChange={this.handleChange}  />
-
-</FormGroup>
-        </Col>
-      </Row>
-      <Row form>
-        <Col md={6}>
-          <FormGroup>
-            <Label for="exampleQuantity">Quantity</Label>
-            <Input type="email" name="email" id="email" placeholder="with a placeholder" 
-            value={this.state.email}
-            onChange={this.handleChange}  />
-          </FormGroup>
-        </Col>
-      </Row>
-      <Row form>
-        <Col md={6}>
-          <FormGroup>
-            <Label for="examplePrice">Price</Label>
-            <Input type="text" name="price" id="price" placeholder="Enter the price" 
-            value={this.state.username}
-            onChange={this.handleChange}  />
-          </FormGroup>
-        </Col>
-      </Row>
-    
-      <Button
+      return (
+        <div className="container">
+            <h1>Add Food Items</h1>
+                <Form onSubmit={this.handleSubmit}>
+                    <FormGroup>
+                        <Input type='text' name='foodname' id='foodname'
+                            placeholder="Foodname"
+                            value={this.state.foodname}
+                            onChange={this.handleChange} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Input type='description' name='description' id='description'
+                            placeholder="Description"
+                            value={this.state.description}
+                            onChange={this.handleChange} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Input type='quantity' name='quantity' id='quantity'
+                            placeholder="Quantity"
+                            value={this.state.quantity}
+                            onChange={this.handleChange} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Input type='price' name='price' id='price'
+                            placeholder="Price"
+                            value={this.state.price}
+                            onChange={this.handleChange} />
+                    </FormGroup>
+                    <Button
             variant="primary"
             type="submit"
             onClick={() => {
-              alert("Your fooditem is added!");
+              alert("Your fooditem has been successfully added.");
             }}
           >
             Submit
-          </Button>    </Form> </div>
+          </Button>
+          <Link
+                to="/editfooditems"
+                style={{
+                  marginLeft: "20px",
+                  fontWeight: "bold",
+                  padding: "5px"
+                }}
+              >
+                Edit Your Fooditems
+              </Link>
+                </Form>
+
+            </div>
         )
     }
 }
-
-export default withRouter(Register);

@@ -1,12 +1,14 @@
 import React from "react";
 import { Container, Row, Col, ListGroup, Card } from "react-bootstrap";
+import Footer from '../Navbar/Footer'
+
 
 class Contact extends React.Component {
   render() {
     return (
       <div>
-        <h1 className="bg-primary text-white contact-heading">
-          For Emergency Contact
+        <h1>
+         You can also Contact Us Here! 
         </h1>
         <Container>
           <div className="mapouter">
@@ -15,7 +17,7 @@ class Contact extends React.Component {
                 width={1000}
                 height={500}
                 id="gmap_canvas"
-                src="https://maps.google.com/maps?q=thulobharang&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=Foodmario&t=&z=13&ie=UTF8&iwloc=&output=embed"
                 frameBorder={0}
                 scrolling="no"
                 marginHeight={0}
@@ -35,14 +37,14 @@ class Contact extends React.Component {
         <Container>
           <Row>
             <Col xs={12} md={6}>
-              <h1 className="contact-info text-primary">Address Information</h1>
+              <h1>Address Information</h1>
               <Card style={{ width: "30rem" }}>
                 <ListGroup variant="flush">
                   <ListGroup.Item>
                     <strong>Name :</strong>: Foodie.
                   </ListGroup.Item>
                   <ListGroup.Item>
-                    <strong>Address :</strong> Sanepa, Lalitpur, Nepal
+                    <strong>Address :</strong> Pulchowk, Lalitpur, Nepal
                   </ListGroup.Item>
                   <ListGroup.Item>
                     <strong>Tel :</strong> 012345678,014545454
@@ -55,6 +57,8 @@ class Contact extends React.Component {
             </Col>
           </Row>
         </Container>
+        <p></p>
+        <Footer />
       </div>
     );
   }

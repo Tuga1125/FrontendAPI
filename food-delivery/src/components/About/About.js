@@ -33,6 +33,7 @@ class About extends React.Component {
         <div className="container">
           <Row>
             <Col xs={12} md={6}>
+              <h1>YOUR REVIEWS</h1>
               <Review title="YOUR REVIEW" label="Your Reviews" />
             </Col>
           </Row>

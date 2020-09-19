@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Footer.css"
 
 class Footer extends React.Component {
   render() {
@@ -12,6 +13,10 @@ class Footer extends React.Component {
                 <h5 className="text-uppercase">Foodie</h5>
                 <p>
                   Order what you want to eat whilst sitting at home.
+               
+                </p>
+                <p>
+                We are here for you at this moment with you.
                 </p>
               </div>
 

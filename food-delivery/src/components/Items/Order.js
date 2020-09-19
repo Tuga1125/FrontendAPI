@@ -6,8 +6,9 @@ export default class Review extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            foodname: '',
-            comment: '',
+            quantity:'',
+            price:'',
+            date:''
         }
     }
     handleChange = (event) => {
@@ -17,32 +18,39 @@ export default class Review extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:3000/api/review', this.state)
+        axios.post('http://localhost:3000/api/orderitem', this.state)
             .then((res) => {
                 console.log(res)
             }).catch(err => console.log(err.response.data))
     }
     render() {
-        return (
-            <div className='container'>
+      return (
+        <div className="container">
+            <h1>Order Food Items</h1>
                 <Form onSubmit={this.handleSubmit}>
                     <FormGroup>
-                        <Input type='text' name='foodname' id='foodname'
-                            placeholder="Foodname"
-                            value={this.state.foodname}
+                        <Input type='quantity' name='quantity' id='quantity'
+                            placeholder="Quantity"
+                            value={this.state.quantity}
                             onChange={this.handleChange} />
                     </FormGroup>
                     <FormGroup>
-                        <Input type='comment' name='comment' id='comment'
-                            placeholder="Comment"
-                            value={this.state.comment}
+                        <Input type='price' name='price' id='price'
+                            placeholder="Price"
+                            value={this.state.price}
+                            onChange={this.handleChange} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Input type='date' name='date' id='date'
+                            placeholder="Date"
+                            value={this.state.date}
                             onChange={this.handleChange} />
                     </FormGroup>
                     <Button
             variant="primary"
             type="submit"
             onClick={() => {
-              alert("Thanks for submitting your valuable feedback.");
+              alert("Your fooditem has been successfully added.");
             }}
           >
             Submit

@@ -1,18 +1,19 @@
-import React from "react";
-import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import axios from 'axios'
-import { withRouter } from "react-router";
+import React, { Component } from 'react'
+import { Row, Col, Form, FormGroup, Input, Button } from 'reactstrap'
+import axios from 'axios';
+import { Redirect } from 'react-router-dom'; 
+import jwtDecode from 'jwt-decode';
 
-class Register extends React.Component {
+export default class Login extends Component {
     constructor(props) {
         super(props)
         this.state = {
-          firstname: "", 
-          lastname: "",
-          username:"",
-          email: "",
-          password: "",
-          role:""
+            username: '',
+            email: '',
+            password: '',
+            firstname: '',
+            lastname:'',
+            role:''
         }
     }
     handleChange = (event) => {
@@ -20,88 +21,92 @@ class Register extends React.Component {
             [event.target.name]: event.target.value
         })
     }
-    handleSubmit = (event) => {
-        event.preventDefault();
+   
+    handleSubmit = (e) => {
+        e.preventDefault();
         axios.post('http://localhost:3000/api/users/register', this.state)
-            .then((res) => {
-                console.log(res)
-            }).catch(err => console.log(err.response.data))
-    }
-    render() {
-        return (
-            <div className="container">
-                <h1>Registration Form</h1>
-            <Form>
-     
-      <Row form>
-        <Col md={6}>
-          <FormGroup>
-            <Label for="exampleFirstName">First Name</Label>
-            <Input type="text" name="firstname" id="firstname" placeholder="input your firstname" 
-            value={this.state.firstname}
-            onChange={this.handleChange}  />
-          </FormGroup>
-        </Col>
-        <Col md={6}>
-          <FormGroup>
-            <Label for="exampleLastName">Last Name</Label>
-            <Input type="text" name="lastname" id="lastname" placeholder="Last Name" 
-            value={this.state.lastname}
-            onChange={this.handleChange}  />
-
-</FormGroup>
-        </Col>
-      </Row>
-      <Row form>
-        <Col md={6}>
-          <FormGroup>
-            <Label for="exampleEmail">Email</Label>
-            <Input type="email" name="email" id="email" placeholder="with a placeholder" 
-            value={this.state.email}
-            onChange={this.handleChange}  />
-          </FormGroup>
-        </Col>
-      </Row>
-      <Row form>
-        <Col md={6}>
-          <FormGroup>
-            <Label for="exampleUsername">Username</Label>
-            <Input type="text" name="username" id="username" placeholder="input your username" 
-            value={this.state.username}
-            onChange={this.handleChange}  />
-          </FormGroup>
-        </Col>
-        <Col md={6}>
-          <FormGroup>
-            <Label for="examplePassword">Password</Label>
-            <Input type="password" name="password" id="password" placeholder="input your password" 
-            value={this.state.password}
-            onChange={this.handleChange}  />
-          </FormGroup>
-        </Col>
-      </Row>
-      <Row form>
-        <Col md={6}>
-          <FormGroup>
-            <Label for="exampleRole">Role</Label>
-            <Input type="role" name="role" id="role" placeholder="with a placeholder" 
-            value={this.state.role}
-            onChange={this.handleChange}  />
-          </FormGroup>
-        </Col>
-      </Row>
-    
-      <Button
+        .then((res) => {
+          console.log(res)
+      }).catch(err => console.log(err.response.data))
+}
+render() {
+  return (
+      <div className="container">
+          <h1>Registration Form</h1>
+                <p></p>
+                <Form onSubmit={this.handleSubmit}>
+                <Row form>
+                   <Col md={6}>
+                    <FormGroup>
+                        <Input type='text' name='username' id='username'
+                            placeholder="Username"
+                            value={this.state.username}
+                            onChange={this.handleChange} />
+                    </FormGroup>
+                    </Col>
+                    </Row>
+                    <Row form>
+                   <Col md={6}>
+                    <FormGroup>
+                        <Input type='text' name='email' id='email'
+                            placeholder="Email"
+                            value={this.state.email}
+                            onChange={this.handleChange} />
+                    </FormGroup>
+                    </Col>
+                    </Row>
+                    <Row form>
+                   <Col md={6}>
+                    <FormGroup>
+                        <Input type='password' name='password' id='password'
+                            placeholder="Password"
+                            value={this.state.password}
+                            onChange={this.handleChange} />
+                    </FormGroup>
+                    </Col>
+                    </Row>
+                    <Row form>
+                   <Col md={6}>
+                    <FormGroup>
+                        <Input type='text' name='firstname' id='firstname'
+                            placeholder="Firstname"
+                            value={this.state.f}
+                            onChange={this.handleChange} />
+                    </FormGroup>
+                    </Col>
+                    </Row>
+                    <Row form>
+                   <Col md={6}>
+                    <FormGroup>
+                        <Input type='lastname' name='lastname' id='lastname'
+                            placeholder="Lastname"
+                            value={this.state.lastname}
+                            onChange={this.handleChange} />
+                    </FormGroup>
+                    </Col>
+                    </Row>
+                    <Row form>
+                   <Col md={6}>
+                    <FormGroup>
+                        <Input type='role' name='role' id='role'
+                            placeholder="Role"
+                            value={this.state.role}
+                            onChange={this.handleChange} />
+                    </FormGroup>
+                    </Col>
+                    </Row>
+                    <Button
             variant="primary"
             type="submit"
             onClick={() => {
-              alert("Thanks for registering with us.");
+              alert("You are logged in successfully");
             }}
           >
             Submit
-          </Button>    </Form> </div>
+          </Button>
+                </Form>
+
+            </div>
         )
     }
 }
-
-export default withRouter(Register);

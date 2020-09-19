@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from '../NavBar'
+import Navbar from '../Navbar/Navbar'
 
 export default function Dashboard(props) {
     const handleLogout = () => {
@@ -7,6 +7,6 @@ export default function Dashboard(props) {
         props.history.push('/');
     }
     return (
-        <NavBar handleLogout={handleLogout} />
+        <Navbar handleLogout={handleLogout} />
     )
 }
