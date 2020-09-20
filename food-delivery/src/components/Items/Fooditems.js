@@ -22,6 +22,7 @@ export default class Review extends Component {
         axios.post('http://localhost:3000/api/fooditem', this.state)
             .then((res) => {
                 console.log(res)
+                this.props.history.push("/fooditems");
             }).catch(err => console.log(err.response.data))
     }
     render() {

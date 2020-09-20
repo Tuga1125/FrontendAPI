@@ -11,6 +11,7 @@ import Order from "./Items/Order";
 import Navbar from "./Navbar/Navbar";
 import Profile from "./Authentication/Profile";
 import Login from "./Authentication/Login";
+import Submitted from "./Submitted/Submitted";
 import Register from "./Authentication/Register";
 // import decode from "jwt-decode";
 
@@ -73,6 +74,7 @@ class App extends React.Component {
               <Route path="/profile" export component={Profile}/>
               <Route path="/login" exact component={Login} />
               <Route path="/register" exact component={Register} />
+              <Route path="/submitted" exact component={Submitted} />        
             </Switch>
            </div>
         </BrowserRouter>

@@ -21,6 +21,7 @@ export default class Review extends Component {
         axios.post('http://localhost:3000/api/orderitem', this.state)
             .then((res) => {
                 console.log(res)
+                this.props.history.push("/fooditems");
             }).catch(err => console.log(err.response.data))
     }
     render() {
@@ -51,6 +52,7 @@ export default class Review extends Component {
             type="submit"
             onClick={() => {
               alert("Your fooditem has been successfully added.");
+
             }}
           >
             Submit

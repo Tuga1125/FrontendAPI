@@ -13,7 +13,7 @@ class About extends React.Component {
   render() {
     return (
       <div>
-        <Image class="header-image" src="./images/header-image.jpg" fluid />
+        <Image class="" src="./images/chef.png"/>
         <Jumbotron>
           <h2>Foodie</h2>
           <p>

@@ -13,7 +13,7 @@ export default class Login extends Component {
             password: '',
             firstname: '',
             lastname:'',
-            role:''
+            role:'',
         }
     }
     handleChange = (event) => {
@@ -26,8 +26,11 @@ export default class Login extends Component {
         e.preventDefault();
         axios.post('http://localhost:3000/api/users/register', this.state)
         .then((res) => {
-          console.log(res)
-      }).catch(err => console.log(err.response.data))
+            console.log(res)
+            this.props.history.push("/submitted");
+
+      }).catch(err => 
+        alert("Username is already taken"));
 }
 render() {
   return (
