@@ -28,7 +28,7 @@ export default class Review extends Component {
                 <Form onSubmit={this.handleSubmit}>
                     <FormGroup>
                         <Input type='text' name='foodname' id='foodname'
-                            placeholder="name"
+                            placeholder="Foodname"
                             value={this.state.foodname}
                             onChange={this.handleChange} />
                     </FormGroup>

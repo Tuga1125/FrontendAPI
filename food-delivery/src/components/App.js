@@ -13,45 +13,8 @@ import Profile from "./Authentication/Profile";
 import Login from "./Authentication/Login";
 import Submitted from "./Submitted/Submitted";
 import Register from "./Authentication/Register";
-// import decode from "jwt-decode";
+import ViewFoodItems from "./Items/ViewFoodItems";
 
-// const checkAuth = () => {
-//   const token = localStorage.getItem("token");
-//   if (!token) {
-//     return false;
-//   }
-//   try {
-//     const { exp } = decode(token);
-//     console.log(exp);
-//     if (exp < new Date().getTime() / 1000) {
-//       return false;
-//     }
-//   } catch (e) {
-//     return false;
-//   }
-
-//   return true;
-// };
-
-// const AuthRoute = ({ component: Component, ...rest }) => {
-//   return (
-//     <Route
-//       {...rest}
-//       render={props =>
-//         checkAuth() ? (
-//           <Component {...props} />
-//         ) : (
-//           <Redirect
-//             to={{
-//               pathname: "/login"
-//               // state: { from: props.location }
-//             }}
-//           />
-//         )
-//       }
-//     />
-//   );
-// };
 
 class App extends React.Component {
   render() {
@@ -74,7 +37,10 @@ class App extends React.Component {
               <Route path="/profile" export component={Profile}/>
               <Route path="/login" exact component={Login} />
               <Route path="/register" exact component={Register} />
-              <Route path="/submitted" exact component={Submitted} />        
+              <Route path="/submitted" exact component={Submitted} /> 
+              <Route path="/viewfooditems" exact component={ViewFoodItems} />  
+ 
+              viewfooditems      
             </Switch>
            </div>
         </BrowserRouter>

@@ -73,6 +73,16 @@ export default class Review extends Component {
               >
                 Edit Your Fooditems
               </Link>
+              <Link
+                to="/viewfooditems"
+                style={{
+                  marginLeft: "20px",
+                  fontWeight: "bold",
+                  padding: "5px"
+                }}
+              >
+                View Your Fooditems
+              </Link>
                 </Form>
 
             </div>
